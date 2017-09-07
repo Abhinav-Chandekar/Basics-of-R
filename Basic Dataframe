@@ -1,0 +1,29 @@
+Name<- c("A","B","C","D","E")
+Age <- c(23,24,25,26,27)
+Maths1<-c(55,68,77,89,78)
+Science1<-c(45,67,87,54,67)
+student<-data.frame(Name,Age,Maths1,Science1)
+student$Total<-student$Maths1+student$Science1
+student1<-student[,-1]
+student$Mathperct<-100*student$Maths1/student$Total
+student$sqAge<-student$Age*student$Age
+student$logAge<-log10(student$Age)
+student$expAGe<-exp(student$Age/mean(student$Age))
+student$sqtAge<-sqrt(student$Age)
+student$invAge<-1/(student$Age)
+
+class(student$Name)
+student$Name<-as.character(student$Name)
+
+class(student$Name)
+
+View(student)
+log1<-student$Age>=25
+log1
+student5<-student[log1,]
+student5
+
+View(women)
+student6<-student[sample_student,]
+student6
+View(student6)
